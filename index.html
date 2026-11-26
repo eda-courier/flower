@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Тепловая карта доставок цветов в 16 городах-миллионниках.">
-    <title>Тепловая карта заказов цветов</title>
+    <title>Где больше всего заказов с цветами?</title>
     <link rel="stylesheet" href="./vendor/leaflet.css">
     <link rel="stylesheet" href="./styles.css">
     <script defer src="./vendor/leaflet.js"></script>
@@ -15,7 +15,7 @@
     <header class="page-header">
       <div class="wordmark">
         <span class="flower" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <h1>Тепловая карта заказов цветов</h1>
+        <h1>Где больше всего заказов с цветами?</h1>
       </div>
     </header>
 
@@ -31,21 +31,21 @@
         <div class="map-stage">
           <div id="map" aria-label="Карта доставок цветов"></div>
           <div id="tile-status" class="tile-status" role="status" hidden>Подложка недоступна. Зоны и данные доступны.</div>
-          <button class="reset-map" id="reset-map" type="button">Весь город</button>
+          <button class="reset-map" id="reset-map" type="button">Показать весь город</button>
           <div class="map-legend" aria-label="Легенда карты">
             <strong>Доставок в зоне ≈ 1 км²</strong>
             <div class="legend-scale" id="legend-scale"></div>
           </div>
         </div>
         <section class="hotspots" aria-labelledby="hotspots-title">
-          <h2 id="hotspots-title">Зоны-лидеры</h2>
+          <h2 id="hotspots-title">Зоны-лидеры по заказам</h2>
           <div class="zone-list" id="zone-list"></div>
         </section>
       </section>
 
       <aside class="ranking" aria-labelledby="ranking-title">
         <header class="ranking-header">
-          <h2 id="ranking-title">Города-миллионники</h2>
+          <h2 id="ranking-title">Города</h2>
           <div class="total"><strong id="total-orders"></strong><span>доставок в <span id="total-cities"></span> городах</span></div>
         </header>
         <ol class="city-list" id="city-list"></ol>
@@ -55,8 +55,9 @@
     <footer class="page-footer">
       <details>
         <summary>Как читать карту</summary>
-        <p>Цвет показывает сумму доставленных заказов native из цветочных магазинов в каждой зоне. Чем темнее зона, тем больше доставок. Шкала единая для всех городов. Город определён по полю региона в выгрузке.</p>
-        <p>В выгрузку попали магазины с 5 доставками и более любым способом. На карте показаны зоны с хотя бы одной доставкой native. Карта отражает историческую выгрузку, а не текущие заказы. Для прогноза нужны дополнительные данные.</p>
+       <p><strong>29 ноября — День матери.</strong> В этот праздник принято дарить цветы, поэтому заказов из цветочных магазинов может быть больше обычного.</p>
+<p>Мы подготовили «Цветочную карту». На ней видно, в каких зонах раньше доставляли больше заказов с цветами: чем темнее зона, тем больше таких доставок было.</p>
+<p>Посмотрите карту, чтобы понять, где заказы с цветами встречались чаще. Она показывает прошлые доставки, а не заказы в реальном времени.</p>
       </details>
     </footer>
 
