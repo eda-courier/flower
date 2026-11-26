@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Тепловая карта доставок цветов в 16 городах-миллионниках.">
+    <title>Тепловая карта заказов цветов</title>
+    <link rel="stylesheet" href="./vendor/leaflet.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./vendor/leaflet.js"></script>
+    <script defer src="./data.js"></script>
+    <script defer src="./map.js"></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="wordmark">
+        <span class="flower" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <h1>Тепловая карта заказов цветов</h1>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="map-panel" aria-label="Тепловая карта по городу">
+        <header class="map-header">
+          <div class="picker">
+            <label for="city-select">Город</label>
+            <select id="city-select"></select>
+          </div>
+          <div class="city-stats" id="city-stats" aria-live="polite"></div>
+        </header>
+        <div class="map-stage">
+          <div id="map" aria-label="Карта доставок цветов"></div>
+          <div id="tile-status" class="tile-status" role="status" hidden>Подложка недоступна. Зоны и данные доступны.</div>
+          <button class="reset-map" id="reset-map" type="button">Весь город</button>
+          <div class="map-legend" aria-label="Легенда карты">
+            <strong>Доставок в зоне ≈ 1 км²</strong>
+            <div class="legend-scale" id="legend-scale"></div>
+          </div>
+        </div>
+        <section class="hotspots" aria-labelledby="hotspots-title">
+          <h2 id="hotspots-title">Зоны-лидеры</h2>
+          <div class="zone-list" id="zone-list"></div>
+        </section>
+      </section>
+
+      <aside class="ranking" aria-labelledby="ranking-title">
+        <header class="ranking-header">
+          <h2 id="ranking-title">Города-миллионники</h2>
+          <div class="total"><strong id="total-orders"></strong><span>доставок в <span id="total-cities"></span> городах</span></div>
+        </header>
+        <ol class="city-list" id="city-list"></ol>
+      </aside>
+    </main>
+
+    <footer class="page-footer">
+      <details>
+        <summary>Как читать карту</summary>
+        <p>Цвет показывает сумму доставленных заказов native из цветочных магазинов в каждой зоне. Чем темнее зона, тем больше доставок. Шкала единая для всех городов. Город определён по полю региона в выгрузке.</p>
+        <p>В выгрузку попали магазины с 5 доставками и более любым способом. На карте показаны зоны с хотя бы одной доставкой native. Карта отражает историческую выгрузку, а не текущие заказы. Для прогноза нужны дополнительные данные.</p>
+      </details>
+    </footer>
+
+    <noscript>Включите JavaScript, чтобы посмотреть карту.</noscript>
+  </body>
+</html>
